@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>送给我最爱的你</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="送给我最爱的你" />
+    <meta name="description" content="送给我最爱的你" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="style/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/garden.js"></script>
+    <script type="text/javascript" src="style/functions.js"></script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments" style="color:#FF0000;font-size:16px;font-weight:bold;">昕宝：</span><br /><br />
+				<span class="space"/><span class="comments">^_^ 七夕快乐！   ^_^</span><br />
+				<span class="space"/><span class="comments">^_^ 从前，我们是二人世界   ^_^</span><br />
+				<span class="space"/><span class="comments">^_^ 现在，我们是一家三口   ^_^</span><br />
+				<span class="space"/><span class="comments" style="color:#FF0000;font-size:16px;">执子手，相偕老！--崔鸣浩 ^∨^</span><br />
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        虽然现在工作忙碌,但我一直把你放在心里！ <br>
+						希望你健康快乐每一天！<br>						
+						
+
+
+                        <div id="elapseClock" s2014/4/29tyle="display:none;"></div>
+                        <a href='#' id="accept">点我是小母猪！</a>
+                    </div>
+                    <div id="loveu">
+                        执子手，相偕老！<br/>
+                        <div class="signature">- 崔鸣浩</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright">
+            <a href="http://www.myloverwx.tk">longxiaotianxia.com</a>
+        </div>
+		<div style="display:none;">
+			<video src="http://sc.111ttt.com/up/mp3/163352/16A7142C4C48CA6B0D8C5E489C16BF64.mp3" autoplay="autopaly"></video>
+		</div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "你的浏览器不支持 HTML5!<br/>请使用 Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 10000);
+            
+            $("#accept").click(function(){
+				var strs = "2014-11-10 20:30:00";  //这里设置计时的初始值！
+				var nowTime=new Date();
+				var together = new Date(strs.replace(/-/g,"/"));
+                $(this).hide();
+                $("#elapseClock").show();
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 500);
+            })
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+</body>
+</html>
