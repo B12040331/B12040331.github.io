@@ -19,22 +19,7 @@
 </head>
 
 <body>
-	<audio controls id="music"   src="source/My Sunshine.mp3"  type="audio/mpeg" autoplay>
-	</audio>
-   <script type="text/javascript">
-    window.onload = function(){
-             setInterval("toggleSound()",100);
-        }
 
-    function toggleSound() {
-                var music = document.getElementById("music");//获取ID  
-                    
-                if (music.paused) { //判读是否播放  
-                    music.paused=false;
-                    music.play(); //没有就播放 
-                }    
-        }
-</script>
     <div id="mainDiv">
         <div id="content">
             <div id="code">
